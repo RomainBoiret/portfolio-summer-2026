@@ -2,10 +2,12 @@
 title: Un portfolio rapide, sans le poids habituel
 description: Ce qui a réellement amélioré le score Lighthouse de ce site - et quels conseils de performance n’étaient que du bruit.
 date: 2026-07-22
+series: portfolio-notes
+seriesOrder: 3
 tags:
-  - apprentissage
   - performance
   - nextjs
+  - portfolio
 ---
 
 J’ai passé quelques jours à améliorer les performances de ce portfolio. Une partie des conseils était utile. Beaucoup mesurait la mauvaise chose.

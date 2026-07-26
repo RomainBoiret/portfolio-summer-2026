@@ -2,6 +2,7 @@
 title: Petits jeux, vraies leçons
 description: Ce que reconstruire Snake, Pong et Simon m’a appris sur l’état, le retour utilisateur et le fait de terminer un travail.
 date: 2026-06-28
+draft: true
 tags:
   - jeux
   - javascript

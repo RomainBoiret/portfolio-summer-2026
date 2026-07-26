@@ -1,10 +1,12 @@
 ---
 title: Notes from building in public
 description: Why I write short posts about unfinished work, project progress, and the ideas worth keeping while learning.
-date: 2026-07-15
+date: 2026-07-10
+series: portfolio-notes
+seriesOrder: 1
 tags:
   - learning
-  - projects
+  - portfolio
 ---
 
 This blog is for the work in between milestones: a pattern that finally clicked, a project that moved forward, or a tool worth sharing with someone else.

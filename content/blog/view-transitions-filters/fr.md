@@ -2,6 +2,7 @@
 title: View Transitions pour les filtres de projets
 description: Comment une petite amélioration progressive rend la grille de projets plus fluide lors d’un changement de catégorie.
 date: 2026-06-18
+draft: true
 tags:
   - bons-plans
   - css

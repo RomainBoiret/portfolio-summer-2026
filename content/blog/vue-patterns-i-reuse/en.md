@@ -2,6 +2,7 @@
 title: Vue patterns I keep reusing
 description: Composables, clear props, and a few habits that help small UI systems feel finished.
 date: 2026-07-08
+draft: true
 tags:
   - learning
   - vue

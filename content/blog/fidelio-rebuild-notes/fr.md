@@ -2,6 +2,7 @@
 title: Fidelio - ce que je reconstruirais en premier
 description: Une note de projet sur l’application de cartes de fidélité et les parcours mobiles qui comptent encore le plus.
 date: 2026-06-28
+draft: true
 tags:
   - projets
   - mobile

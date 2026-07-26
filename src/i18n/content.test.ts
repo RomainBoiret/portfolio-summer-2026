@@ -44,7 +44,7 @@ describe("i18n content helpers", () => {
       projects: {
         ...en.projects,
         summaries: {},
-        highlights: undefined,
+        highlights: undefined as unknown as typeof en.projects.highlights,
       },
     });
 

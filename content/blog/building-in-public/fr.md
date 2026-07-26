@@ -1,10 +1,12 @@
 ---
 title: Notes en construisant en public
 description: Pourquoi je publie de courts billets sur le travail inachevé, l’avancement des projets et les idées qui méritent d’être gardées.
-date: 2026-07-15
+date: 2026-07-10
+series: portfolio-notes
+seriesOrder: 1
 tags:
   - apprentissage
-  - projets
+  - portfolio
 ---
 
 Ce blog est destiné aux moments entre deux jalons : un pattern qui finit par s’imposer, un projet qui avance, ou un outil qui mérite d’être partagé.

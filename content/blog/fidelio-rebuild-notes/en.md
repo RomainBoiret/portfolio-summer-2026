@@ -2,6 +2,7 @@
 title: Fidelio - what I would rebuild first
 description: A short project note on the loyalty-card app and the mobile flows that still matter most.
 date: 2026-06-28
+draft: true
 tags:
   - projects
   - mobile

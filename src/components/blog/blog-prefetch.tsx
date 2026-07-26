@@ -16,16 +16,18 @@ export function BlogPrefetch({
   slugs: string[];
 }) {
   const router = useRouter();
+  const slugsKey = slugs.join("|");
 
   React.useEffect(() => {
     let cancelled = false;
     let idleId = 0;
     let timeoutId = 0;
+    const slugList = slugsKey ? slugsKey.split("|") : [];
 
     const run = () => {
       if (cancelled) return;
       router.prefetch(`/${locale}/blog`);
-      for (const slug of slugs) {
+      for (const slug of slugList) {
         router.prefetch(`/${locale}/blog/${slug}`);
       }
     };
@@ -43,7 +45,7 @@ export function BlogPrefetch({
       }
       if (timeoutId) window.clearTimeout(timeoutId);
     };
-  }, [locale, router, slugs.join("|")]);
+  }, [locale, router, slugsKey]);
 
   return null;
 }

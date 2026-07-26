@@ -2,6 +2,7 @@
 title: Ce que j’optimise en premier
 description: Un ordre d’attaque concret quand une page paraît lente : bien mesurer, protéger le LCP, réduire le JavaScript, puis affiner.
 date: 2026-06-12
+draft: true
 tags:
   - performance
   - frontend

@@ -2,10 +2,12 @@
 title: Shipping a fast portfolio without the usual weight
 description: What actually improved this site’s Lighthouse score - and which performance advice turned out to be noise.
 date: 2026-07-22
+series: portfolio-notes
+seriesOrder: 3
 tags:
-  - learning
   - performance
   - nextjs
+  - portfolio
 ---
 
 I spent a few days improving performance on this portfolio. Some advice helped. A lot of it measured the wrong thing.

@@ -1,10 +1,11 @@
 ---
 title: Concevoir sans modèles tout faits
 description: Comment je garde un portfolio volontaire - en partant de la typographie et de l’atmosphère plutôt que d’un kit d’interface prêt à l’emploi.
-date: 2026-07-08
+date: 2026-07-16
+series: portfolio-notes
+seriesOrder: 2
 tags:
   - design
-  - frontend
   - portfolio
 ---
 

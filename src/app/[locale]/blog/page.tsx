@@ -34,7 +34,13 @@ export default async function BlogPage({ params }: Props) {
           blurb: dictionary.blog.blurb,
           empty: dictionary.blog.empty,
           readingTime: dictionary.blog.readingTime,
-          topStories: dictionary.blog.topStories,
+          allTags: dictionary.blog.allTags,
+          clearFilter: dictionary.blog.clearFilter,
+          noPostsForTag: dictionary.blog.noPostsForTag,
+          filterByTag: dictionary.blog.filterByTag,
+          seriesLabel: dictionary.blog.seriesLabel,
+          allPosts: dictionary.blog.allPosts,
+          searchPlaceholder: dictionary.blog.searchPlaceholder,
         }}
       />
     </>

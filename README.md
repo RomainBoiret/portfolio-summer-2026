@@ -66,6 +66,9 @@ date: 2026-07-22
 tags:
   - learning
 draft: false
+# Optionnel - rattache l'article à une série
+# series: fidelio
+# seriesOrder: 1
 ---
 
 Markdown body here.
@@ -73,7 +76,9 @@ Markdown body here.
 
 - Compilation : `npm run compile:blog` (aussi lancée avant `dev` / `build`).
 - Pages blog en SSG, isolées du bundle de l’accueil.
-- Meta utilisées : `slug`, `title`, `description`, `date`, `tags`, `readingMinutes`.
+- Meta : `slug`, `title`, `description`, `date`, `tags`, `readingMinutes`, `series?`, `seriesOrder?`.
+- Titres de séries : `src/data/blog-series.ts`.
+- Index éditorial (liste) ; articles avec TOC, progression, related, bandeau série si présent.
 
 ## Fonctionnalités notables
 

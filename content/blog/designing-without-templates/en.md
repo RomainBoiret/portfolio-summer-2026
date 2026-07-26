@@ -1,10 +1,11 @@
 ---
 title: Designing without templates
 description: How I keep a portfolio feeling deliberate - starting from typography and atmosphere instead of a ready-made UI kit.
-date: 2026-07-08
+date: 2026-07-16
+series: portfolio-notes
+seriesOrder: 2
 tags:
   - design
-  - frontend
   - portfolio
 ---
 

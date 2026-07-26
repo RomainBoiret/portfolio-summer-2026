@@ -138,6 +138,21 @@ export type Dictionary = {
     backToBlog: string;
     keepReading: string;
     topStories: string;
+    onThisPage: string;
+    relatedPosts: string;
+    allTags: string;
+    clearFilter: string;
+    noPostsForTag: string;
+    copyCode: string;
+    copiedCode: string;
+    filterByTag: string;
+    seriesLabel: string;
+    seriesProgress: string;
+    seriesPrevious: string;
+    seriesNext: string;
+    archiveCount: string;
+    allPosts: string;
+    searchPlaceholder: string;
   };
 };
 
@@ -341,7 +356,7 @@ export const en: Dictionary = {
   blog: {
     title: "Blog",
     blurb:
-      "Writing on software engineering, design decisions, and projects in progress.",
+      "Writing on software engineering, design decisions, and projects in progress - from shipping notes to rebuilds.",
     homeTeaser:
       "A few recent posts from ongoing work. The full archive is available anytime.",
     metaDescription:
@@ -351,5 +366,20 @@ export const en: Dictionary = {
     backToBlog: "Back to blog",
     keepReading: "Keep reading",
     topStories: "Featured",
+    onThisPage: "On this page",
+    relatedPosts: "Keep reading",
+    allTags: "All",
+    clearFilter: "Clear",
+    noPostsForTag: "No posts with this tag yet.",
+    copyCode: "Copy code",
+    copiedCode: "Copied",
+    filterByTag: "Filter by tag",
+    seriesLabel: "Series",
+    seriesProgress: "{current} of {total}",
+    seriesPrevious: "Previous",
+    seriesNext: "Next",
+    archiveCount: "{count} notes",
+    allPosts: "All posts",
+    searchPlaceholder: "Search…",
   },
 };

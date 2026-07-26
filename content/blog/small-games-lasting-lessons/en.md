@@ -2,6 +2,7 @@
 title: Small games, lasting lessons
 description: What rebuilding Snake, Pong, and Simon taught me about state, feedback, and finishing work.
 date: 2026-06-28
+draft: true
 tags:
   - games
   - javascript

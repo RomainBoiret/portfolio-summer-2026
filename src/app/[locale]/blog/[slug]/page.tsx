@@ -3,7 +3,12 @@ import { notFound } from "next/navigation";
 import { BlogArticle } from "@/components/blog/blog-article";
 import { BlogPostingData } from "@/components/structured-data";
 import { siteConfig } from "@/data/site";
-import { getBlogPost, getBlogSlugs } from "@/lib/blog";
+import {
+  getBlogPost,
+  getBlogSlugs,
+  getRelatedBlogPosts,
+  getSeriesPosts,
+} from "@/lib/blog";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 
@@ -68,6 +73,10 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const dictionary = getDictionary(locale);
+  const related = getRelatedBlogPosts(slug, locale, 3);
+  const seriesPosts = post.series
+    ? getSeriesPosts(post.series, locale)
+    : [];
 
   return (
     <>
@@ -75,10 +84,20 @@ export default async function BlogPostPage({ params }: Props) {
       <BlogArticle
         locale={locale}
         post={post}
+        related={related}
+        seriesPosts={seriesPosts}
         copy={{
           backToBlog: dictionary.blog.backToBlog,
           readingTime: dictionary.blog.readingTime,
           keepReading: dictionary.blog.keepReading,
+          onThisPage: dictionary.blog.onThisPage,
+          relatedPosts: dictionary.blog.relatedPosts,
+          copyCode: dictionary.blog.copyCode,
+          copiedCode: dictionary.blog.copiedCode,
+          seriesLabel: dictionary.blog.seriesLabel,
+          seriesProgress: dictionary.blog.seriesProgress,
+          seriesPrevious: dictionary.blog.seriesPrevious,
+          seriesNext: dictionary.blog.seriesNext,
         }}
       />
     </>

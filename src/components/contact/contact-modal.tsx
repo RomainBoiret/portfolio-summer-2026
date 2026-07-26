@@ -285,8 +285,9 @@ export function ContactModal() {
                     onChange={() =>
                       setFieldErrors((prev) => {
                         if (!prev.name) return prev;
-                        const { name: _n, ...rest } = prev;
-                        return rest;
+                        const next = { ...prev };
+                        delete next.name;
+                        return next;
                       })
                     }
                   />
@@ -320,8 +321,9 @@ export function ContactModal() {
                     onChange={() =>
                       setFieldErrors((prev) => {
                         if (!prev.email) return prev;
-                        const { email: _e, ...rest } = prev;
-                        return rest;
+                        const next = { ...prev };
+                        delete next.email;
+                        return next;
                       })
                     }
                   />
@@ -355,8 +357,9 @@ export function ContactModal() {
                   onChange={() =>
                     setFieldErrors((prev) => {
                       if (!prev.message) return prev;
-                      const { message: _m, ...rest } = prev;
-                      return rest;
+                      const next = { ...prev };
+                      delete next.message;
+                      return next;
                     })
                   }
                 />

@@ -5,6 +5,7 @@ import path from "node:path";
 import { cache } from "react";
 import type { Locale } from "@/i18n/config";
 import type { BlogPost, BlogPostMeta } from "@/lib/blog-types";
+import { pickRelatedPosts } from "@/lib/blog-related";
 
 const GENERATED_DIR = path.join(process.cwd(), "generated", "blog");
 
@@ -52,7 +53,36 @@ export const getBlogPost = cache(
       date: compiled.date,
       tags: compiled.tags,
       readingMinutes: compiled.readingMinutes,
+      ...(compiled.series ? { series: compiled.series } : {}),
+      ...(compiled.seriesOrder ? { seriesOrder: compiled.seriesOrder } : {}),
       html: compiled.html,
+      toc: Array.isArray(compiled.toc) ? compiled.toc : [],
     };
   },
 );
+
+/** Related posts by shared series, then tags, then latest. */
+export function getRelatedBlogPosts(
+  slug: string,
+  locale: Locale,
+  limit = 3,
+): BlogPostMeta[] {
+  const current = getBlogPost(slug, locale);
+  if (!current) return [];
+  return pickRelatedPosts(current, getAllBlogPosts(locale), limit);
+}
+
+/** All posts in a series, ordered by seriesOrder then date. */
+export function getSeriesPosts(
+  seriesId: string,
+  locale: Locale,
+): BlogPostMeta[] {
+  return getAllBlogPosts(locale)
+    .filter((post) => post.series === seriesId)
+    .sort((a, b) => {
+      const ao = a.seriesOrder ?? Number.MAX_SAFE_INTEGER;
+      const bo = b.seriesOrder ?? Number.MAX_SAFE_INTEGER;
+      if (ao !== bo) return ao - bo;
+      return a.date.localeCompare(b.date);
+    });
+}

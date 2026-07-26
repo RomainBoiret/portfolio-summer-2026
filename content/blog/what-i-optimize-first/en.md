@@ -2,6 +2,7 @@
 title: What I optimize first
 description: A practical order of attack when a page feels slow: measure correctly, protect LCP, reduce JavaScript, then refine.
 date: 2026-06-12
+draft: true
 tags:
   - performance
   - frontend

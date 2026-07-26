@@ -2,6 +2,7 @@
 title: View Transitions for project filters
 description: How a small progressive enhancement makes the projects grid feel smoother when categories change.
 date: 2026-06-18
+draft: true
 tags:
   - cool-finds
   - css

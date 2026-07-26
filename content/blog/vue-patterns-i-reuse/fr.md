@@ -2,6 +2,7 @@
 title: Les patterns Vue que je réutilise
 description: Composables, props claires et quelques habitudes qui aident un petit système d’interface à paraître abouti.
 date: 2026-07-08
+draft: true
 tags:
   - apprentissage
   - vue

@@ -68,6 +68,38 @@ function estimateReadingMinutes(text) {
   return Math.max(1, Math.round(words / 200));
 }
 
+function slugifyHeading(text) {
+  const base = text
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return base || "section";
+}
+
+/** Add stable ids to h2/h3, wrap pre blocks, and build a TOC. */
+function enhanceHtml(html) {
+  const used = new Map();
+  const toc = [];
+
+  let next = html.replace(/<(h[23])>([\s\S]*?)<\/\1>/gi, (_, tag, inner) => {
+    const text = inner.replace(/<[^>]+>/g, "").trim();
+    let id = slugifyHeading(text);
+    const count = (used.get(id) ?? 0) + 1;
+    used.set(id, count);
+    if (count > 1) id = `${id}-${count}`;
+    toc.push({ id, text, level: tag.toLowerCase() === "h2" ? 2 : 3 });
+    return `<${tag} id="${id}">${inner}</${tag}>`;
+  });
+
+  next = next.replace(/<pre>([\s\S]*?)<\/pre>/gi, (_, inner) => {
+    return `<div class="blog-code"><pre>${inner}</pre></div>`;
+  });
+
+  return { html: next, toc };
+}
+
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
@@ -102,7 +134,21 @@ function compile() {
         continue;
       }
 
-      const html = marked.parse(content, { async: false });
+      const rawHtml = marked.parse(content, { async: false });
+      const { html, toc } = enhanceHtml(
+        typeof rawHtml === "string" ? rawHtml : String(rawHtml),
+      );
+      const series =
+        typeof fm.series === "string" && fm.series.trim()
+          ? String(fm.series).trim()
+          : undefined;
+      const seriesOrderRaw = fm.seriesOrder;
+      const seriesOrder =
+        series &&
+        (typeof seriesOrderRaw === "number"
+          ? seriesOrderRaw
+          : Number.parseInt(String(seriesOrderRaw ?? ""), 10));
+
       const post = {
         slug,
         title: String(fm.title),
@@ -110,7 +156,12 @@ function compile() {
         date: String(fm.date),
         tags: Array.isArray(fm.tags) ? fm.tags.map(String) : [],
         readingMinutes: estimateReadingMinutes(content),
+        ...(series ? { series } : {}),
+        ...(series && Number.isFinite(seriesOrder) && seriesOrder > 0
+          ? { seriesOrder }
+          : {}),
         html,
+        toc,
         locale,
       };
 
@@ -129,6 +180,8 @@ function compile() {
         date: post.date,
         tags: post.tags,
         readingMinutes: post.readingMinutes,
+        ...(post.series ? { series: post.series } : {}),
+        ...(post.seriesOrder ? { seriesOrder: post.seriesOrder } : {}),
       });
       count += 1;
     }

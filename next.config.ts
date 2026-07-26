@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["clsx", "tailwind-merge"],
     optimizeCss: true,
+    viewTransition: true,
   },
   async headers() {
     return [

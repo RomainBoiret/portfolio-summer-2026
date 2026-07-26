@@ -200,7 +200,7 @@ export const fr: Dictionary = {
   blog: {
     title: "Blog",
     blurb:
-      "Des textes sur le génie logiciel, les décisions de design et les projets en cours.",
+      "Des textes sur le génie logiciel, les décisions de design et les projets en cours - des notes de ship aux rebuilds.",
     homeTeaser:
       "Quelques articles récents issus du travail en cours. L’archive complète reste accessible en tout temps.",
     metaDescription:
@@ -210,5 +210,20 @@ export const fr: Dictionary = {
     backToBlog: "Retour au blog",
     keepReading: "Continuer la lecture",
     topStories: "À la une",
+    onThisPage: "Sur cette page",
+    relatedPosts: "Continuer la lecture",
+    allTags: "Tous",
+    clearFilter: "Effacer",
+    noPostsForTag: "Aucun article avec ce tag pour le moment.",
+    copyCode: "Copier le code",
+    copiedCode: "Copié",
+    filterByTag: "Filtrer par tag",
+    seriesLabel: "Série",
+    seriesProgress: "{current} sur {total}",
+    seriesPrevious: "Précédent",
+    seriesNext: "Suivant",
+    archiveCount: "{count} notes",
+    allPosts: "Tous les articles",
+    searchPlaceholder: "Rechercher…",
   },
 };
