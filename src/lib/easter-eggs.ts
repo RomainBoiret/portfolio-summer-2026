@@ -50,12 +50,12 @@ const eggsEn: EggCopy = {
   toastSourceBody: "The GitHub profile is ready when you are.",
   toastFooterTitle: "Persistence noted",
   toastFooterBody: "Five clicks on the footer. Well played.",
-  cmdHire: "Hire Romain",
+  cmdHire: "Contact Romain",
   cmdHireHint: "Open the contact form",
   cmdCoffee: "Coffee break",
   cmdCoffeeHint: "A quiet tip",
   cmdSource: "View source",
-  cmdSourceHint: "GitHub repository",
+  cmdSourceHint: "Open GitHub",
   cmdGroup: "Secrets",
 };
 
@@ -73,12 +73,12 @@ const eggsFr: EggCopy = {
   toastSourceBody: "Le profil GitHub est prêt quand vous l’êtes.",
   toastFooterTitle: "Persévérance notée",
   toastFooterBody: "Cinq clics sur le pied de page. Bien joué.",
-  cmdHire: "Embaucher Romain",
+  cmdHire: "Contacter Romain",
   cmdHireHint: "Ouvrir le formulaire de contact",
   cmdCoffee: "Pause café",
   cmdCoffeeHint: "Un petit clin d’œil",
   cmdSource: "Voir le code source",
-  cmdSourceHint: "Dépôt GitHub",
+  cmdSourceHint: "Ouvrir GitHub",
   cmdGroup: "Secrets",
 };
 

@@ -158,9 +158,9 @@ export type Dictionary = {
 
 export const en: Dictionary = {
   meta: {
-    role: "Software Engineering Student",
+    role: "Software engineering student",
     description:
-      "Romain Boiret is a software engineering student at ÉTS Montréal building web applications end to end - from interfaces and APIs to performance and developer tools.",
+      "Romain Boiret is a software engineering student at ÉTS Montréal. He builds web interfaces, personal projects, and writes about design, culture, and how products feel to use.",
     keywords: [
       "software engineering student",
       "ÉTS Montréal",
@@ -173,8 +173,9 @@ export const en: Dictionary = {
     ],
   },
   site: {
-    tagline: "Building thoughtful software for the web.",
-    roleLine: "Software Engineering Student · ÉTS Montréal",
+    tagline:
+      "I like building simple web interfaces that feel good to use - and learning something new with every project.",
+    roleLine: "Software engineering student · ÉTS Montréal",
     location: "Montréal, QC",
     nav: {
       home: "Home",
@@ -192,9 +193,9 @@ export const en: Dictionary = {
   },
   ui: {
     skipToContent: "Skip to content",
-    seeProjects: "Explore projects",
+    seeProjects: "See projects",
     seeNotes: "Read the blog",
-    sayHi: "Get in touch",
+    sayHi: "Say hi",
     emailMe: "Send a message",
     navigate: "Navigate",
     openNav: "Open menu",
@@ -211,7 +212,7 @@ export const en: Dictionary = {
     command: {
       open: "Open search",
       placeholder: "Search pages, posts, and actions…",
-      empty: "No matches found.",
+      empty: "Nothing matched that search.",
       navigation: "Pages",
       notes: "Blog",
       actions: "Actions",
@@ -224,42 +225,42 @@ export const en: Dictionary = {
   about: {
     title: "About",
     headline:
-      "I build software for the web - clear interfaces, reliable systems, and careful attention to detail.",
+      "I care as much about clean code as about the small details that make an interface pleasant.",
     paragraphs: [
-      "I’m a software engineering student at École de Technologie Supérieure in Montréal. My interest covers the full web stack: frontend and backend, APIs, data, and the performance decisions that shape how a product feels in practice.",
-      "I work with Vue, React, TypeScript, CSS, and Node.js, and I follow projects from early prototypes through to deployment. Outside of coursework, I lead communications and design for a student club and keep building tools that solve small, concrete problems.",
+      "I’m a software engineering student at École de Technologie Supérieure in Montréal. Most days I’m somewhere between frontend and backend: React, Vue, TypeScript, CSS, Node.js, and the little performance choices that change how a site feels.",
+      "I like following a project from a rough idea to something I can ship. Outside class, I help with design and communications for a student club, and I keep building small tools when I want to try an idea for real.",
     ],
-    focusTitle: "Areas of focus",
+    focusTitle: "What I’m into right now",
     focus: [
-      "Full-stack web applications",
-      "Performance and reliability",
-      "APIs and backend services",
-      "Reusable UI systems and tooling",
+      "Web apps and interfaces",
+      "Making things feel fast and solid",
+      "APIs and small backends",
+      "Reusable UI components",
       "Mobile apps with React Native",
     ],
-    education: "Education",
-    involvement: "Involvement",
-    clubRole: "Lead, Communications & Design",
+    education: "School",
+    involvement: "Outside class",
+    clubRole: "Communications & design lead",
     clubBlurb:
-      "I own the club’s visual identity - website, merchandise, templates, and day-to-day design and communications.",
-    skills: "Skills",
+      "I look after the club’s visual side - website, merch, templates, and day-to-day design.",
+    skills: "Tools I use",
     degree: "B.Eng. Software Engineering",
     present: "Present",
   },
   projects: {
     title: "Projects",
     filterLabel: "Filter by category",
-    selectedWork: "Selected work",
-    moreWork: "More projects",
+    selectedWork: "A few I’m proud of",
+    moreWork: "Other things I’ve built",
     carouselPrev: "Show previous projects",
     carouselNext: "Show next projects",
     github: "GitHub",
-    liveSite: "Visit website",
+    liveSite: "Open site",
     githubAria: "View the GitHub repository for {title}",
     liveAria: "Visit the live website for {title}",
     githubStats: {
       label: "GitHub",
-      blurb: "A snapshot of public contributions and activity.",
+      blurb: "A quick look at what I’ve been shipping in public.",
       contributions: "contributions",
       repositories: "repositories",
       stars: "stars",
@@ -276,57 +277,57 @@ export const en: Dictionary = {
     },
     summaries: {
       "pomikit-ui":
-        "A typed Vue component library that reduces repeated UI work with shared patterns, themes, and dark mode.",
+        "A Nuxt component library I built to get better at reusable UI, Storybook, and tests - with themes and dark mode included.",
       pokepark:
-        "A Java exploration game in a virtual park, with Pokémon interactions and persistent JSON game state.",
+        "A Java exploration game in a virtual park, with Pokémon-style interactions and save data in JSON.",
       "fishfric-bank":
-        "A full-stack banking demo for accounts, transfers, and authentication built with PHP and SQL.",
+        "A small banking demo with accounts, transfers, and login - my way into PHP and SQL end to end.",
       "romainboiret-com":
-        "This bilingual portfolio, designed for performance, clarity, and a public record of ongoing work.",
+        "This site: a bilingual portfolio I keep refining for clarity, speed, and an honest record of what I’m working on.",
       fidelio:
-        "A React Native wallet that scans, organizes, and retrieves loyalty cards in a few taps.",
+        "A React Native app to scan and organize loyalty cards so they’re easy to find when you need them.",
       "simon-game":
-        "A browser remake of Simon focused on timing, feedback, and a reliable game loop.",
+        "A browser remake of Simon, mostly to practice timing, feedback, and a clean game loop.",
       snake:
-        "A classic Snake game in JavaScript, built to practice collision, scoring, and real-time updates.",
-      pong: "A Pong remake with single and two-player modes, centered on feel and simple architecture.",
+        "Classic Snake in JavaScript - collisions, scoring, and live updates without overcomplicating it.",
+      pong: "Pong for one or two players, focused on feel and a simple structure.",
       "solar-system":
-        "An interactive 2D solar system for exploring orbital motion and relative scale in the browser.",
+        "A 2D solar system in the browser to play with orbits and relative scale.",
       untitled:
-        "A generative geometry tool for composing colorful shapes and experimenting with canvas and the DOM.",
+        "A little generative tool for colorful shapes - experimenting with canvas and the DOM.",
       "teddy-bot":
-        "A Discord moderation bot with practical server commands - an early end-to-end Node.js service.",
+        "A Discord moderation bot with practical commands - one of my first full Node.js services.",
       "starwars-galaxy":
-        "A Vue interface experiment exploring cinematic navigation, motion, and immersive layout.",
+        "A Nuxt experiment around cinematic navigation, motion, and a more immersive layout.",
     },
     highlights: {
       "pomikit-ui": [
-        "Vue 3 and TypeScript",
-        "Shared design systems",
-        "Dark mode included",
-        "Built for reuse",
+        "Nuxt and TypeScript",
+        "Reusable components",
+        "Dark mode",
+        "Storybook and tests",
       ],
       "romainboiret-com": [
         "Next.js App Router",
         "English and French",
-        "Performance-focused",
+        "Built with performance in mind",
       ],
       fidelio: [
         "React Native",
-        "Fast card retrieval",
-        "Mobile-first flows",
+        "Quick card lookup",
+        "Designed for the phone",
       ],
     },
   },
   contact: {
     title: "Contact",
     blurb:
-      "Based in {location}. Open to software engineering internships and conversations about web development, product, and performance.",
+      "I’m in {location}. Happy to talk about internships, the web, design, or just say hello.",
     profileAria: "{label} profile for {name}",
     form: {
       eyebrow: "Message",
       title: "Send a message",
-      blurb: "Introduce yourself briefly and I’ll get back to you by email.",
+      blurb: "A short note is enough - I’ll reply by email.",
       name: "Name",
       email: "Email",
       message: "Message",
@@ -334,34 +335,34 @@ export const en: Dictionary = {
       requiredHint: "All fields are required.",
       namePlaceholder: "Alex Martin",
       emailPlaceholder: "alex@company.com",
-      messagePlaceholder: "Hello Romain, I’d like to discuss…",
+      messagePlaceholder: "Hi Romain, I’d like to chat about…",
       submit: "Send message",
       sending: "Sending…",
       successTitle: "Message sent",
       success: "Thanks - I’ll get back to you soon.",
       close: "Close",
-      mailtoFallback: "Prefer to use your email client instead?",
-      errorGeneric: "Something went wrong. Please try again in a moment.",
+      mailtoFallback: "Prefer to use your email app instead?",
+      errorGeneric: "Something went wrong. Mind trying again in a moment?",
       errorNotConfigured:
-        "The contact form isn’t available yet. Please use the email link below.",
+        "The form isn’t wired up yet. You can still reach me with the email link below.",
       errorName: "Please enter your name.",
       errorEmail: "Please enter a valid email address.",
       errorMessage: "Please enter a message.",
     },
   },
   footer: {
-    availability: "Currently seeking a software engineering internship.",
-    builtWithCare: "Built in {city}",
+    availability: "Looking for a software engineering internship.",
+    builtWithCare: "Made in {city}",
   },
   blog: {
     title: "Blog",
     blurb:
-      "Writing on software engineering, design decisions, and projects in progress - from shipping notes to rebuilds.",
+      "Notes on the web, interface design, and what games, films, and music can teach us about how products feel.",
     homeTeaser:
-      "A few recent posts from ongoing work. The full archive is available anytime.",
+      "A few recent posts. There’s more in the full archive if you want to dig in.",
     metaDescription:
-      "Articles by Romain Boiret on software engineering, web development, and personal projects.",
-    empty: "No posts published yet. Check back soon.",
+      "Writing by Romain Boiret on web design, culture, and building interfaces as a software engineering student.",
+    empty: "No posts yet - check back soon.",
     readingTime: "{minutes} min read",
     backToBlog: "Back to blog",
     keepReading: "Keep reading",
@@ -370,7 +371,7 @@ export const en: Dictionary = {
     relatedPosts: "Keep reading",
     allTags: "All",
     clearFilter: "Clear",
-    noPostsForTag: "No posts with this tag yet.",
+    noPostsForTag: "Nothing with that tag yet.",
     copyCode: "Copy code",
     copiedCode: "Copied",
     filterByTag: "Filter by tag",
@@ -378,7 +379,7 @@ export const en: Dictionary = {
     seriesProgress: "{current} of {total}",
     seriesPrevious: "Previous",
     seriesNext: "Next",
-    archiveCount: "{count} notes",
+    archiveCount: "{count} posts",
     allPosts: "All posts",
     searchPlaceholder: "Search…",
   },

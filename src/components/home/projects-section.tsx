@@ -266,7 +266,17 @@ function MoreCard({
         </p>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-5 space-y-4">
+        <ul className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <li
+              key={tech}
+              className="border border-white/35 px-2 py-0.5 text-[0.68rem] uppercase tracking-[0.08em] text-white/90"
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
         <ProjectLinks project={project} labels={labels} />
       </div>
     </article>

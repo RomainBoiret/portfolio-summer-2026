@@ -827,17 +827,6 @@ html {
     transform: scale(0.98);
   }
 
-  .skill-chip {
-    transition:
-      border-color 0.3s ease,
-      background-color 0.3s ease,
-      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .skill-chip:hover {
-    border-color: var(--border-strong);
-    transform: translate3d(0, -2px, 0);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -861,7 +850,6 @@ html {
   .github-stats-grade-kicker,
   .github-stats-metric,
   .github-stats-blurb,
-  .skill-chip,
   .project-filter-label {
     transform: none !important;
     opacity: 1 !important;
@@ -1781,7 +1769,7 @@ html {
   width: 1.65rem;
 }
 
-/* Motif variants — same vocabulary, different placement */
+/* Motif variants - same vocabulary, different placement */
 .blog-cover-motif-1 .blog-cover-arc {
   right: auto;
   left: -22%;

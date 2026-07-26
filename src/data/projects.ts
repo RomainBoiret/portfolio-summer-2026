@@ -1,8 +1,11 @@
 import type { Project, ProjectCategory } from "@/types";
 
 /**
- * Featured = selected work (max 3). Order = display order in the spotlight.
- * Everything else lands in “More work”.
+ * Featured projects are displayed in the main spotlight.
+ * Keep a maximum of three featured projects.
+ *
+ * All remaining projects are displayed in the “More work” section.
+ * Their position in this array determines their display order.
  */
 export const projects: Omit<Project, "summary" | "highlights">[] = [
   {
@@ -10,18 +13,31 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     title: "Pomikit UI",
     year: "2026",
     category: "Utilities",
-    technologies: ["Vue 3", "TypeScript"],
+    technologies: [
+      "Nuxt.js",
+      "Vue 3",
+      "TypeScript",
+      "Storybook",
+      "Vitest",
+    ],
     githubUrl: "https://github.com/RomainBoiret/Pomikit-ui",
+    liveUrl: "https://romainboiret.github.io/Pomikit-ui/",
     featured: true,
     accentColor: "#1a2744",
   },
   {
     slug: "romainboiret-com",
     title: "Portfolio",
-    year: "2025",
+    year: "2026",
     category: "Apps",
-    technologies: ["Next.js", "React", "TypeScript"],
-    githubUrl: "https://github.com/RomainBoiret/romainboiret.com",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+    githubUrl:
+      "https://github.com/RomainBoiret/portfolio-summer-2026",
     liveUrl: "https://romainboiret.com",
     featured: true,
     accentColor: "#c45c26",
@@ -31,7 +47,10 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     title: "Fidelio",
     year: "2024",
     category: "Apps",
-    technologies: ["React Native"],
+    technologies: [
+      "React Native",
+      "TypeScript",
+    ],
     featured: true,
     accentColor: "#2a1f4d",
   },
@@ -40,8 +59,14 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     title: "Star Wars Galaxy",
     year: "2025",
     category: "Apps",
-    technologies: ["Vue"],
-    githubUrl: "https://github.com/RomainBoiret/starwars-galaxy",
+    technologies: [
+      "Nuxt.js",
+      "Vue 3",
+      "TypeScript",
+      "Three.js",
+    ],
+    githubUrl:
+      "https://github.com/RomainBoiret/starwars-galaxy",
     accentColor: "#3d2b1f",
   },
   {
@@ -49,71 +74,55 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     title: "Fish&Fric Bank",
     year: "2024",
     category: "Apps",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
-    githubUrl: "https://github.com/RomainBoiret/FishFric-Bank",
+    technologies: [
+      "PHP",
+      "SQL",
+      "JavaScript",
+      "HTML / CSS",
+    ],
+    githubUrl:
+      "https://github.com/RomainBoiret/FishFric-Bank",
     accentColor: "#0e6b6d",
-  },
-  {
-    slug: "teddy-bot",
-    title: "Teddy Bot",
-    year: "2023",
-    category: "Utilities",
-    technologies: ["JavaScript", "Node.js"],
-    githubUrl: "https://github.com/RomainBoiret/Teddy_Bot.js",
-    accentColor: "#1d4e4f",
   },
   {
     slug: "pokepark",
     title: "PokePark",
     year: "2024",
     category: "Games",
-    technologies: ["Java", "JSON"],
+    technologies: [
+      "Java",
+      "JSON",
+    ],
+    githubUrl: "https://github.com/RomainBoiret/PokePark",
     accentColor: "#7a1f3d",
-  },
-  {
-    slug: "untitled",
-    title: "Untitled",
-    year: "2024",
-    category: "Utilities",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/RomainBoiret/Untitled",
-    accentColor: "#8a2e1f",
   },
   {
     slug: "solar-system",
     title: "Solar System",
     year: "2024",
     category: "Games",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/RomainBoiret/Solar_System.html",
+    technologies: [
+      "JavaScript",
+      "HTML",
+      "CSS",
+    ],
+    githubUrl:
+      "https://github.com/RomainBoiret/Solar_System.html",
     accentColor: "#5b2c6f",
   },
   {
-    slug: "simon-game",
-    title: "Simon Game",
-    year: "2024",
-    category: "Games",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/RomainBoiret/Simon_Game.html",
-    accentColor: "#1f4d3a",
-  },
-  {
-    slug: "snake",
-    title: "Snake",
-    year: "2024",
-    category: "Games",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/RomainBoiret/Snake_Game.html",
-    accentColor: "#4a2c1a",
-  },
-  {
-    slug: "pong",
-    title: "Pong",
-    year: "2024",
-    category: "Games",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    githubUrl: "https://github.com/RomainBoiret/Pong.html",
-    accentColor: "#163a5f",
+    slug: "teddy-bot",
+    title: "Teddy Bot",
+    year: "2023",
+    category: "Utilities",
+    technologies: [
+      "Node.js",
+      "JavaScript",
+      "Discord API",
+    ],
+    githubUrl:
+      "https://github.com/RomainBoiret/Teddy_Bot.js",
+    accentColor: "#1d4e4f",
   },
 ];
 

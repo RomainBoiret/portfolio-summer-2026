@@ -7,8 +7,6 @@ import type { Locale } from "@/i18n/config";
 import type { BlogPost, BlogPostMeta } from "@/lib/blog-types";
 import { pickRelatedPosts } from "@/lib/blog-related";
 import { getSeriesTitle } from "@/data/blog-series";
-import { isCmsEnabled } from "@/lib/cms/config";
-import { fetchWpPost, fetchWpPosts } from "@/lib/cms/posts";
 
 const GENERATED_DIR = path.join(process.cwd(), "generated", "blog");
 
@@ -56,52 +54,46 @@ function readLocalPost(slug: string, locale: Locale): BlogPost | null {
   };
 }
 
-/** All published post metas — WordPress when WP_URL is set, else local JSON. */
-export async function getAllBlogPosts(locale: Locale): Promise<BlogPostMeta[]> {
-  if (isCmsEnabled()) return fetchWpPosts(locale);
+/** All published post metas - from precompiled JSON (no markdown parse). */
+export function getAllBlogPosts(locale: Locale): BlogPostMeta[] {
   return localeIndex(locale);
 }
 
-export async function getLatestBlogPosts(
+export function getLatestBlogPosts(
   locale: Locale,
   limit: number,
-): Promise<BlogPostMeta[]> {
-  const posts = await getAllBlogPosts(locale);
-  return posts.slice(0, limit);
+): BlogPostMeta[] {
+  return getAllBlogPosts(locale).slice(0, limit);
 }
 
-export async function getBlogSlugs(locale: Locale): Promise<string[]> {
-  const posts = await getAllBlogPosts(locale);
-  return posts.map((post) => post.slug);
+export function getBlogSlugs(locale: Locale): string[] {
+  return getAllBlogPosts(locale).map((post) => post.slug);
 }
 
-/** Full post including HTML — cached per request/build. */
+/** Full post including HTML - cached per request/build. */
 export const getBlogPost = cache(
-  async (slug: string, locale: Locale): Promise<BlogPost | null> => {
-    if (isCmsEnabled()) return fetchWpPost(slug, locale);
+  (slug: string, locale: Locale): BlogPost | null => {
     return readLocalPost(slug, locale);
   },
 );
 
 /** Related posts by shared series, then tags, then latest. */
-export async function getRelatedBlogPosts(
+export function getRelatedBlogPosts(
   slug: string,
   locale: Locale,
   limit = 3,
-): Promise<BlogPostMeta[]> {
-  const current = await getBlogPost(slug, locale);
+): BlogPostMeta[] {
+  const current = getBlogPost(slug, locale);
   if (!current) return [];
-  const all = await getAllBlogPosts(locale);
-  return pickRelatedPosts(current, all, limit);
+  return pickRelatedPosts(current, getAllBlogPosts(locale), limit);
 }
 
 /** All posts in a series, ordered by seriesOrder then date. */
-export async function getSeriesPosts(
+export function getSeriesPosts(
   seriesId: string,
   locale: Locale,
-): Promise<BlogPostMeta[]> {
-  const posts = await getAllBlogPosts(locale);
-  return posts
+): BlogPostMeta[] {
+  return getAllBlogPosts(locale)
     .filter((post) => post.series === seriesId)
     .sort((a, b) => {
       const ao = a.seriesOrder ?? Number.MAX_SAFE_INTEGER;

@@ -8,7 +8,7 @@ import type { Locale } from "@/i18n/config";
 import { interpolate } from "@/lib/interpolate";
 import { cn } from "@/lib/utils";
 
-export type GithubStatsCopy = {
+type GithubStatsCopy = {
   label: string;
   blurb: string;
   contributions: string;

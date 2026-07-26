@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/site";
 import { locales } from "@/i18n/config";
 import { getAllBlogPosts } from "@/lib/blog";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const homeEntries = locales.map((locale) => ({
@@ -30,27 +30,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   }));
 
-  const postEntries = (
-    await Promise.all(
-      locales.map(async (locale) => {
-        const posts = await getAllBlogPosts(locale);
-        return posts.map((post) => ({
-          url: `${siteConfig.url}/${locale}/blog/${post.slug}`,
-          lastModified: new Date(`${post.date}T12:00:00`),
-          changeFrequency: "monthly" as const,
-          priority: 0.6,
-          alternates: {
-            languages: Object.fromEntries(
-              locales.map((l) => [
-                l,
-                `${siteConfig.url}/${l}/blog/${post.slug}`,
-              ]),
-            ),
-          },
-        }));
-      }),
-    )
-  ).flat();
+  const postEntries = locales.flatMap((locale) =>
+    getAllBlogPosts(locale).map((post) => ({
+      url: `${siteConfig.url}/${locale}/blog/${post.slug}`,
+      lastModified: new Date(`${post.date}T12:00:00`),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [
+            l,
+            `${siteConfig.url}/${l}/blog/${post.slug}`,
+          ]),
+        ),
+      },
+    })),
+  );
 
   return [...homeEntries, ...blogIndexEntries, ...postEntries];
 }

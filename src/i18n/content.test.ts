@@ -28,9 +28,9 @@ describe("i18n content helpers", () => {
     vi.restoreAllMocks();
   });
 
-  it("localizes project summaries for both locales", async () => {
-    const english = await getLocalizedProjects("en");
-    const french = await getLocalizedProjects("fr");
+  it("localizes project summaries for both locales", () => {
+    const english = getLocalizedProjects("en");
+    const french = getLocalizedProjects("fr");
     expect(english.length).toBeGreaterThan(0);
     expect(english.length).toBe(french.length);
     expect(english[0]?.summary.length).toBeGreaterThan(0);
@@ -38,7 +38,7 @@ describe("i18n content helpers", () => {
     expect(english[0]?.slug).toBe(french[0]?.slug);
   });
 
-  it("falls back when project copy is missing", async () => {
+  it("falls back when project copy is missing", () => {
     vi.spyOn(dictionary, "getDictionary").mockReturnValue({
       ...en,
       projects: {
@@ -48,7 +48,7 @@ describe("i18n content helpers", () => {
       },
     });
 
-    const projects = await getLocalizedProjects("en");
+    const projects = getLocalizedProjects("en");
     expect(projects.length).toBeGreaterThan(0);
     expect(projects.every((project) => project.summary === "")).toBe(true);
     expect(projects.every((project) => project.highlights === undefined)).toBe(
@@ -56,22 +56,22 @@ describe("i18n content helpers", () => {
     );
   });
 
-  it("localizes social labels", async () => {
-    const english = await getLocalizedSocial("en");
-    const french = await getLocalizedSocial("fr");
+  it("localizes social labels", () => {
+    const english = getLocalizedSocial("en");
+    const french = getLocalizedSocial("fr");
     expect(english.some((item) => item.icon === "github")).toBe(true);
     expect(
       french.find((item) => item.icon === "github")?.label,
     ).toMatch(/GitHub/i);
   });
 
-  it("builds contact blurbs with location", async () => {
-    expect(await getContactBlurb("en")).toMatch(/Montréal|Montreal/i);
-    expect((await getContactBlurb("fr")).length).toBeGreaterThan(10);
+  it("builds contact blurbs with location", () => {
+    expect(getContactBlurb("en")).toMatch(/Montréal|Montreal/i);
+    expect(getContactBlurb("fr").length).toBeGreaterThan(10);
   });
 
-  it("builds a footer line with year and name", async () => {
-    const line = await getFooterLine("en", 2026, "Romain Boiret");
+  it("builds a footer line with year and name", () => {
+    const line = getFooterLine("en", 2026, "Romain Boiret");
     expect(line).toContain("© 2026");
     expect(line).toContain("Romain Boiret");
   });

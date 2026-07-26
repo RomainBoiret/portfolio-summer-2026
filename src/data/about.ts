@@ -13,7 +13,6 @@ export const club = {
   url: "https://clubnaova.ca/",
 };
 
-/** Highlight skills for the About card - keep this short. */
 export const skills = [
   "TypeScript",
   "JavaScript",
@@ -22,6 +21,8 @@ export const skills = [
   "React",
   "Next.js",
   "Node.js",
-  "HTML / CSS",
+  "Docker",
+  "CI/CD",
+  "Nx",
   "Git",
 ];

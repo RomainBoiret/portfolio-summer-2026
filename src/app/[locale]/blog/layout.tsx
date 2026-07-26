@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { siteConfig } from "@/data/site";
-import { getContentDictionary } from "@/i18n/content";
+import { getDictionary } from "@/i18n/get-dictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 
 type Props = {
@@ -21,7 +21,7 @@ export async function generateMetadata({
   const { locale: raw } = await params;
   if (!isLocale(raw)) return {};
   const locale = raw as Locale;
-  const dictionary = await getContentDictionary(locale);
+  const dictionary = getDictionary(locale);
   const description = dictionary.blog.metaDescription;
 
   return {

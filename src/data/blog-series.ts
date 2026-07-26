@@ -2,9 +2,9 @@ import type { Locale } from "@/i18n/config";
 
 /** Display titles for blog series. Add an entry when you start a new series. */
 export const blogSeries = {
-  "portfolio-notes": {
-    en: "Shipping this site",
-    fr: "Livrer ce site",
+  "web-through": {
+    en: "The Web Through…",
+    fr: "Le Web vu à travers…",
   },
 } as const;
 

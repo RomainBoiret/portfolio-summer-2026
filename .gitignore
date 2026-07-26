@@ -25,6 +25,7 @@
 *.pem
 lighthouse-report.json
 lighthouse-*.json
+lighthouse-out/
 build-log.txt
 .tmp/
 

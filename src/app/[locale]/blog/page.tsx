@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { BlogIndex } from "@/components/blog/blog-index";
 import { BlogPrefetch } from "@/components/blog/blog-prefetch";
 import { getAllBlogPosts } from "@/lib/blog";
-import { getContentDictionary } from "@/i18n/content";
+import { getDictionary } from "@/i18n/get-dictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 
 type Props = {
@@ -17,8 +17,8 @@ export default async function BlogPage({ params }: Props) {
   const { locale: raw } = await params;
   if (!isLocale(raw)) notFound();
   const locale = raw as Locale;
-  const dictionary = await getContentDictionary(locale);
-  const posts = await getAllBlogPosts(locale);
+  const dictionary = getDictionary(locale);
+  const posts = getAllBlogPosts(locale);
 
   return (
     <>

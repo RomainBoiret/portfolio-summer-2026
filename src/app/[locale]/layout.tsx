@@ -3,7 +3,6 @@ import { AppShell } from "@/components/layout/app-shell";
 import { StructuredData } from "@/components/structured-data";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { getChromeCopy } from "@/i18n/chrome";
-import { getContentDictionary } from "@/i18n/content";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getAllBlogPosts } from "@/lib/blog";
 
@@ -21,9 +20,9 @@ export default async function LocaleLayout({
   const { locale: raw } = await params;
   if (!isLocale(raw)) notFound();
   const locale = raw as Locale;
-  const dictionary = await getContentDictionary(locale);
-  const chrome = getChromeCopy(locale, getDictionary(locale));
-  const posts = await getAllBlogPosts(locale);
+  const dictionary = getDictionary(locale);
+  const chrome = getChromeCopy(locale, dictionary);
+  const posts = getAllBlogPosts(locale);
 
   return (
     <>

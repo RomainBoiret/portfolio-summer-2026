@@ -1,27 +1,22 @@
 import Link from "next/link";
+import { siteConfig } from "@/data/site";
 import type { Locale } from "@/i18n/config";
-import {
-  getFooterLine,
-  getLocalizedSocial,
-  getSiteIdentity,
-} from "@/i18n/content";
+import { getFooterLine, getLocalizedSocial } from "@/i18n/content";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { ContactTrigger } from "@/components/contact/contact-trigger";
 import { FooterEgg } from "@/components/easter-eggs";
 
-export async function SiteFooter({ locale }: { locale: Locale }) {
+export function SiteFooter({ locale }: { locale: Locale }) {
   const dictionary = getDictionary(locale);
   const year = new Date().getFullYear();
-  const identity = await getSiteIdentity(locale);
-  const [social, footerLine] = await Promise.all([
-    getLocalizedSocial(locale),
-    getFooterLine(locale, year, identity.name),
-  ]);
+  const social = getLocalizedSocial(locale);
 
   return (
     <footer className="border-t border-border pb-10 pt-8">
       <div className="mx-auto flex w-full max-w-shell flex-col gap-6 px-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-        <FooterEgg locale={locale}>{footerLine}</FooterEgg>
+        <FooterEgg locale={locale}>
+          {getFooterLine(locale, year, siteConfig.name)}
+        </FooterEgg>
 
         <nav
           aria-label={dictionary.ui.footerSocial}

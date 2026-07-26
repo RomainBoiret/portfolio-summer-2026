@@ -9,34 +9,29 @@ import {
   getRelatedBlogPosts,
   getSeriesPosts,
 } from "@/lib/blog";
-import { getContentDictionary } from "@/i18n/content";
+import { getDictionary } from "@/i18n/get-dictionary";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-export async function generateStaticParams() {
-  const params: Array<{ locale: string; slug: string }> = [];
-  for (const locale of locales) {
-    const slugs = await getBlogSlugs(locale);
-    for (const slug of slugs) {
-      params.push({ locale, slug });
-    }
-  }
-  return params;
+export function generateStaticParams() {
+  return locales.flatMap((locale) =>
+    getBlogSlugs(locale).map((slug) => ({ locale, slug })),
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw, slug } = await params;
   if (!isLocale(raw)) return {};
   const locale = raw as Locale;
-  const post = await getBlogPost(slug, locale);
+  const post = getBlogPost(slug, locale);
   if (!post) return {};
 
   const languages: Record<string, string> = { "x-default": `/en/blog/${slug}` };
   for (const l of locales) {
-    if (await getBlogPost(slug, l)) {
+    if (getBlogPost(slug, l)) {
       languages[l] = `/${l}/blog/${slug}`;
     }
   }
@@ -74,13 +69,13 @@ export default async function BlogPostPage({ params }: Props) {
   const { locale: raw, slug } = await params;
   if (!isLocale(raw)) notFound();
   const locale = raw as Locale;
-  const post = await getBlogPost(slug, locale);
+  const post = getBlogPost(slug, locale);
   if (!post) notFound();
 
-  const dictionary = await getContentDictionary(locale);
-  const related = await getRelatedBlogPosts(slug, locale, 3);
+  const dictionary = getDictionary(locale);
+  const related = getRelatedBlogPosts(slug, locale, 3);
   const seriesPosts = post.series
-    ? await getSeriesPosts(post.series, locale)
+    ? getSeriesPosts(post.series, locale)
     : [];
 
   return (
