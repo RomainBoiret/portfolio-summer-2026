@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { HomePage } from "@/components/home/home-page";
 import { siteConfig } from "@/data/site";
-import { getDictionary } from "@/i18n/get-dictionary";
+import { getContentDictionary } from "@/i18n/content";
 import { isLocale, type Locale } from "@/i18n/config";
 
 type Props = {
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: raw } = await params;
   if (!isLocale(raw)) return {};
   const locale = raw as Locale;
-  const dictionary = getDictionary(locale);
+  const dictionary = await getContentDictionary(locale);
 
   return {
     title: {

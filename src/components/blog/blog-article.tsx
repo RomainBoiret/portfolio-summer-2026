@@ -40,9 +40,11 @@ export function BlogArticle({
   };
 }) {
   const leadTag = post.tags[0];
-  const seriesTitle = post.series
-    ? getSeriesTitle(post.series, locale)
-    : null;
+  const seriesTitle = post.seriesTitle
+    ? post.seriesTitle
+    : post.series
+      ? getSeriesTitle(post.series, locale)
+      : null;
 
   const seriesIndex = seriesPosts.findIndex((item) => item.slug === post.slug);
   const previous =

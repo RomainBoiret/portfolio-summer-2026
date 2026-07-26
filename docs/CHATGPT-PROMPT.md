@@ -263,7 +263,7 @@ CONVENTIONS À RESPECTER SI TU PROPOSES DU CODE
 5. Préférer des changements ciblés ; ne pas refondre sans demande.
 6. Styles : réutiliser tokens CSS / classes existantes (.site-popup, etc.).
 7. Tests Vitest pour la logique pure (lib/i18n) quand on touche ces couches.
-8. Le front public reste Next.js ; WordPress headless est une piste future pour le blog seulement (pas encore implémenté).
+8. Le front public reste Next.js sur Vercel. Le contenu peut venir de WordPress headless (`WP_URL`) via le plugin `wordpress/portfolio-cms` — voir `docs/WORDPRESS-CMS.md`. Sans `WP_URL`, fallback local Markdown + `src/data`.
 
 ═══════════════════════════════════════════════════════════════
 MA QUESTION

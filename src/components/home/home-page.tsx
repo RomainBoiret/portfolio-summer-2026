@@ -5,15 +5,14 @@ import { Reveal, TitleReveal } from "@/components/motion/reveal";
 import { ShapeFieldLazy } from "@/components/design/shape-field-lazy";
 import { BlogPrefetch } from "@/components/blog/blog-prefetch";
 import { ProjectsSectionLazy as ProjectsSection } from "@/components/home/projects-section-lazy";
-import { siteConfig } from "@/data/site";
-import { club, education, skills } from "@/data/about";
 import type { Locale } from "@/i18n/config";
-import { getDictionary } from "@/i18n/get-dictionary";
 import { getProjectsCopy } from "@/i18n/chrome";
 import {
+  getAboutContent,
   getContactBlurb,
+  getContentDictionary,
   getLocalizedProjects,
-  getLocalizedSocial,
+  getSiteIdentity,
 } from "@/i18n/content";
 import { getLatestBlogPosts } from "@/lib/blog";
 import { getGithubStats } from "@/lib/github-stats";
@@ -40,15 +39,21 @@ function SectionHeading({
 }
 
 export async function HomePage({ locale }: { locale: Locale }) {
-  const dictionary = getDictionary(locale);
-  const [first, last] = siteConfig.name.split(" ");
-  const social = getLocalizedSocial(locale);
-  const projects = getLocalizedProjects(locale);
+  const dictionary = await getContentDictionary(locale);
+  const identity = await getSiteIdentity(locale);
+  const about = await getAboutContent();
+  const [first, last] = identity.name.split(" ");
+  const social = identity.social;
+  const projects = await getLocalizedProjects(locale);
   const projectsCopy = getProjectsCopy(dictionary);
-  const notesPool = getLatestBlogPosts(locale, 8);
+  const notesPool = await getLatestBlogPosts(locale, 8);
   const latestNotes = notesPool.slice(0, 3);
   const prefetchSlugs = notesPool.map((post) => post.slug);
-  const githubStats = await getGithubStats();
+  const [githubStats, contactBlurb] = await Promise.all([
+    getGithubStats(),
+    getContactBlurb(locale),
+  ]);
+  const { education, club, skills } = about;
 
   return (
     <div className="page-atmosphere relative pb-10 pt-[4.75rem] sm:pb-14 sm:pt-24">
@@ -188,7 +193,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
           seeNotes: dictionary.ui.seeNotes,
           readingTime: dictionary.blog.readingTime,
           contactTitle: dictionary.contact.title,
-          contactBlurb: getContactBlurb(locale),
+          contactBlurb: contactBlurb,
           availability: dictionary.footer.availability,
           emailMe: dictionary.ui.emailMe,
           profileAria: dictionary.contact.profileAria,

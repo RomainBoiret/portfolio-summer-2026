@@ -15,6 +15,8 @@ export type BlogPostMeta = {
   series?: string;
   /** 1-based order within the series. */
   seriesOrder?: number;
+  /** Resolved display title for the series (locale-aware). */
+  seriesTitle?: string;
 };
 
 export type BlogPost = BlogPostMeta & {

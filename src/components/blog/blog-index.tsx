@@ -78,9 +78,11 @@ function FeaturedPost({
 }) {
   const tone = toneForBlogSlug(post.slug);
   const tag = post.tags[0];
-  const seriesTitle = post.series
-    ? getSeriesTitle(post.series, locale)
-    : null;
+  const seriesTitle = post.seriesTitle
+    ? post.seriesTitle
+    : post.series
+      ? getSeriesTitle(post.series, locale)
+      : null;
 
   return (
     <Reveal className="reveal-soft">
@@ -136,9 +138,11 @@ function GridCard({
 }) {
   const tone = toneForBlogSlug(post.slug);
   const tag = post.tags[0];
-  const seriesTitle = post.series
-    ? getSeriesTitle(post.series, locale)
-    : null;
+  const seriesTitle = post.seriesTitle
+    ? post.seriesTitle
+    : post.series
+      ? getSeriesTitle(post.series, locale)
+      : null;
 
   return (
     <Reveal delay={Math.min(index, 5) * 0.04} className="reveal-soft">

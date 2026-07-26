@@ -1,6 +1,6 @@
 import { siteConfig } from "@/data/site";
 import { isLocale, locales, type Locale } from "@/i18n/config";
-import { getDictionary } from "@/i18n/get-dictionary";
+import { getContentDictionary } from "@/i18n/content";
 import { getAllBlogPosts } from "@/lib/blog";
 import { buildBlogRss } from "@/lib/rss";
 
@@ -17,8 +17,8 @@ export async function GET(
     return new Response("Not found", { status: 404 });
   }
   const locale = raw as Locale;
-  const dictionary = getDictionary(locale);
-  const posts = getAllBlogPosts(locale);
+  const dictionary = await getContentDictionary(locale);
+  const posts = await getAllBlogPosts(locale);
   const xml = buildBlogRss({
     locale,
     title: `${dictionary.blog.title} · ${siteConfig.name}`,
