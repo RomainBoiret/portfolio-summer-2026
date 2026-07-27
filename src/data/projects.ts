@@ -27,7 +27,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
   },
   {
     slug: "fishfric-bank-remastered",
-    title: "Fish&Fric",
+    title: "Fish&Fric Remastered",
     year: "2026",
     category: "Apps",
     technologies: [
