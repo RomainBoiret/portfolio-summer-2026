@@ -124,7 +124,7 @@ export const fr: Dictionary = {
         "Une bibliothèque de composants Nuxt que j’ai créée pour mieux comprendre les composants réutilisables, Storybook et les tests - avec thèmes et mode sombre.",
       pokepark:
         "Un jeu d’exploration en Java dans un parc virtuel, avec des interactions façon Pokémon et une sauvegarde en JSON.",
-      "fishfric-bank":
+      "fishfric-bank-remastered":
         "Un remaster bancaire thématique océan avec comptes, transferts ledger, P2P et démo recruteur - Next.js, Prisma et Postgres de bout en bout.",
       "romainboiret-com":
         "Ce site : un portfolio bilingue que je peaufine pour la clarté, la vitesse, et un suivi honnête de ce sur quoi je travaille.",
@@ -146,20 +146,22 @@ export const fr: Dictionary = {
     },
     highlights: {
       "pomikit-ui": [
-        "Nuxt et TypeScript",
-        "Composants réutilisables",
-        "Mode sombre",
-        "Storybook et tests",
-      ],
-      "romainboiret-com": [
-        "Next.js App Router",
-        "Anglais et français",
-        "Pensé pour la perf",
+        "Design system Nuxt 3 + TypeScript",
+        "Docs Storybook et couverture Vitest",
+        "Thèmes et mode sombre",
+        "Pensé pour une vraie réutilisation",
       ],
       fidelio: [
-        "Expo et React Native",
-        "Scan et affichage en caisse",
-        "Stockage local sur l’appareil",
+        "App Expo + démo web live",
+        "Scan de codes-barres jusqu’à la caisse",
+        "Local-first, sans compte obligatoire",
+        "Conçu pour un usage en magasin",
+      ],
+      "fishfric-bank-remastered": [
+        "Next.js App Router + ledger Prisma",
+        "Transferts internes et P2P avec Q&R",
+        "Auth, Neon Postgres, déploiement Vercel",
+        "Mode démo public pour recruteurs",
       ],
     },
   },
