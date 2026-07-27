@@ -116,6 +116,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     ],
     githubUrl:
       "https://github.com/RomainBoiret/Solar_System.html",
+    liveUrl: "https://romainboiret.github.io/Solar_System.html/",
     accentColor: "#e07020",
   },
   {
