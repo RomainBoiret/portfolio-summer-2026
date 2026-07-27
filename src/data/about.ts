@@ -15,14 +15,14 @@ export const club = {
 
 export const skills = [
   "TypeScript",
-  "JavaScript",
-  "Vue",
-  "Nuxt.js",
   "React",
   "Next.js",
+  "Vue",
+  "Nuxt.js",
   "Node.js",
+  "PostgreSQL",
+  "Prisma",
   "Docker",
   "CI/CD",
   "Nx",
-  "Git",
 ];
