@@ -51,6 +51,9 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
       "React Native",
       "TypeScript",
     ],
+    githubUrl:
+      "https://github.com/RomainBoiret/Fidelio",
+    liveUrl: "https://fidelio-sand.vercel.app/",
     featured: true,
     accentColor: "#2a1f4d",
   },
