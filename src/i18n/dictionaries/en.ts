@@ -285,7 +285,7 @@ export const en: Dictionary = {
       "romainboiret-com":
         "This site: a bilingual portfolio I keep refining for clarity, speed, and an honest record of what I’m working on.",
       fidelio:
-        "A React Native app to scan and organize loyalty cards so they’re easy to find when you need them.",
+        "A React Native (Expo) app to scan, store, and show loyalty barcodes at checkout - local-first, with a live web demo.",
       "simon-game":
         "A browser remake of Simon, mostly to practice timing, feedback, and a clean game loop.",
       snake:
@@ -313,9 +313,9 @@ export const en: Dictionary = {
         "Built with performance in mind",
       ],
       fidelio: [
-        "React Native",
-        "Quick card lookup",
-        "Designed for the phone",
+        "Expo and React Native",
+        "Barcode scan and checkout display",
+        "Local-first on device",
       ],
     },
   },

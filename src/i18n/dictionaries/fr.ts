@@ -129,7 +129,7 @@ export const fr: Dictionary = {
       "romainboiret-com":
         "Ce site : un portfolio bilingue que je peaufine pour la clarté, la vitesse, et un suivi honnête de ce sur quoi je travaille.",
       fidelio:
-        "Une app React Native pour scanner et ranger des cartes de fidélité, histoire de les retrouver facilement.",
+        "Une app React Native (Expo) pour scanner, ranger et montrer les codes-barres de fidélité en caisse - local-first, avec une démo web live.",
       "simon-game":
         "Une reprise de Simon dans le navigateur, surtout pour travailler le rythme, le feedback et une boucle de jeu propre.",
       snake:
@@ -157,9 +157,9 @@ export const fr: Dictionary = {
         "Pensé pour la perf",
       ],
       fidelio: [
-        "React Native",
-        "Accès rapide aux cartes",
-        "Pensé pour le téléphone",
+        "Expo et React Native",
+        "Scan et affichage en caisse",
+        "Stockage local sur l’appareil",
       ],
     },
   },

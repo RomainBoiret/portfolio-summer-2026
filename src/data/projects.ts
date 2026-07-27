@@ -50,6 +50,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     technologies: [
       "React Native",
       "TypeScript",
+      "Expo",
     ],
     githubUrl:
       "https://github.com/RomainBoiret/Fidelio",
