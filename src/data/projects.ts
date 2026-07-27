@@ -26,21 +26,22 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     accentColor: "#15233f",
   },
   {
-    slug: "romainboiret-com",
-    title: "Portfolio",
+    slug: "fishfric-bank-remastered",
+    title: "Fish&Fric",
     year: "2026",
     category: "Apps",
     technologies: [
       "Next.js",
-      "React",
       "TypeScript",
+      "Prisma",
+      "PostgreSQL",
       "Tailwind CSS",
     ],
     githubUrl:
-      "https://github.com/RomainBoiret/portfolio-summer-2026",
-    liveUrl: "https://romainboiret.com",
+      "https://github.com/RomainBoiret/FishFric-remastered",
+    liveUrl: "https://fish-fric-remastered-8ag2.vercel.app/",
     featured: true,
-    accentColor: "#c45c26",
+    accentColor: "#0a4d68",
   },
   {
     slug: "fidelio",
@@ -59,6 +60,22 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     accentColor: "#6e2f4a",
   },
   {
+    slug: "romainboiret-com",
+    title: "Portfolio",
+    year: "2026",
+    category: "Apps",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+    githubUrl:
+      "https://github.com/RomainBoiret/portfolio-summer-2026",
+    liveUrl: "https://romainboiret.com",
+    accentColor: "#c45c26",
+  },
+  {
     slug: "pokepark",
     title: "PokePark",
     year: "2024",
@@ -71,21 +88,6 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     ],
     githubUrl: "https://github.com/RomainBoiret/PokePark",
     accentColor: "#22593a",
-  },
-  {
-    slug: "fishfric-bank",
-    title: "Fish&Fric Bank",
-    year: "2024",
-    category: "Apps",
-    technologies: [
-      "PHP",
-      "SQL",
-      "JavaScript",
-      "HTML / CSS",
-    ],
-    githubUrl:
-      "https://github.com/RomainBoiret/FishFric-Bank",
-    accentColor: "#0a4d68",
   },
   {
     slug: "starwars-galaxy",

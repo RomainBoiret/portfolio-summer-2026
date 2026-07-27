@@ -281,7 +281,7 @@ export const en: Dictionary = {
       pokepark:
         "A Java exploration game in a virtual park, with Pokémon-style interactions and save data in JSON.",
       "fishfric-bank":
-        "A small banking demo with accounts, transfers, and login - my way into PHP and SQL end to end.",
+        "An ocean-themed banking remaster with accounts, ledger transfers, P2P, and a recruiter demo - Next.js, Prisma, and Postgres end to end.",
       "romainboiret-com":
         "This site: a bilingual portfolio I keep refining for clarity, speed, and an honest record of what I’m working on.",
       fidelio:

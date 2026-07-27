@@ -125,7 +125,7 @@ export const fr: Dictionary = {
       pokepark:
         "Un jeu d’exploration en Java dans un parc virtuel, avec des interactions façon Pokémon et une sauvegarde en JSON.",
       "fishfric-bank":
-        "Une petite démo bancaire avec comptes, virements et connexion - ma façon d’aborder PHP et SQL de bout en bout.",
+        "Un remaster bancaire thématique océan avec comptes, transferts ledger, P2P et démo recruteur - Next.js, Prisma et Postgres de bout en bout.",
       "romainboiret-com":
         "Ce site : un portfolio bilingue que je peaufine pour la clarté, la vitesse, et un suivi honnête de ce sur quoi je travaille.",
       fidelio:
