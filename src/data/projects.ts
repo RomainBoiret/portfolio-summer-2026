@@ -23,7 +23,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     githubUrl: "https://github.com/RomainBoiret/Pomikit-ui",
     liveUrl: "https://romainboiret.github.io/Pomikit-ui/",
     featured: true,
-    accentColor: "#1a2744",
+    accentColor: "#15233f",
   },
   {
     slug: "romainboiret-com",
@@ -56,22 +56,21 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
       "https://github.com/RomainBoiret/Fidelio",
     liveUrl: "https://fidelio-sand.vercel.app/",
     featured: true,
-    accentColor: "#2a1f4d",
+    accentColor: "#6e2f4a",
   },
   {
-    slug: "starwars-galaxy",
-    title: "Star Wars Galaxy",
-    year: "2025",
-    category: "Apps",
+    slug: "pokepark",
+    title: "PokePark",
+    year: "2024",
+    category: "Games",
     technologies: [
-      "Nuxt.js",
-      "Vue 3",
-      "TypeScript",
-      "Three.js",
+      "Java",
+      "Swing",
+      "JSON",
+      "i18n",
     ],
-    githubUrl:
-      "https://github.com/RomainBoiret/starwars-galaxy",
-    accentColor: "#3d2b1f",
+    githubUrl: "https://github.com/RomainBoiret/PokePark",
+    accentColor: "#22593a",
   },
   {
     slug: "fishfric-bank",
@@ -86,19 +85,22 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     ],
     githubUrl:
       "https://github.com/RomainBoiret/FishFric-Bank",
-    accentColor: "#0e6b6d",
+    accentColor: "#0a4d68",
   },
   {
-    slug: "pokepark",
-    title: "PokePark",
-    year: "2024",
-    category: "Games",
+    slug: "starwars-galaxy",
+    title: "Star Wars Galaxy",
+    year: "2025",
+    category: "Apps",
     technologies: [
-      "Java",
-      "JSON",
+      "Nuxt.js",
+      "Vue 3",
+      "TypeScript",
+      "Three.js",
     ],
-    githubUrl: "https://github.com/RomainBoiret/PokePark",
-    accentColor: "#7a1f3d",
+    githubUrl:
+      "https://github.com/RomainBoiret/starwars-galaxy",
+    accentColor: "#c9a227",
   },
   {
     slug: "solar-system",
@@ -112,7 +114,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     ],
     githubUrl:
       "https://github.com/RomainBoiret/Solar_System.html",
-    accentColor: "#5b2c6f",
+    accentColor: "#e07020",
   },
   {
     slug: "teddy-bot",
@@ -126,7 +128,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     ],
     githubUrl:
       "https://github.com/RomainBoiret/Teddy_Bot.js",
-    accentColor: "#1d4e4f",
+    accentColor: "#5865f2",
   },
 ];
 
