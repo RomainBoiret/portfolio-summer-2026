@@ -61,12 +61,12 @@ function DecorPanel({ label }: { label: string }) {
   return (
     <div
       aria-hidden
-      className="relative min-h-[7rem] overflow-hidden border-t border-white/10 lg:min-h-0 lg:w-[42%] lg:shrink-0 lg:border-l lg:border-t-0"
+      className="relative hidden overflow-hidden border-l border-white/10 lg:block lg:w-[28%] lg:shrink-0"
     >
-      <span className="absolute -right-10 -top-12 h-44 w-44 rounded-full border border-white/20 transition-transform duration-500 group-hover:scale-105" />
-      <span className="absolute bottom-8 left-8 h-12 w-12 rotate-12 border-2 border-white/25" />
-      <span className="absolute right-14 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-white/35" />
-      <span className="absolute left-[40%] top-8 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-white/45">
+      <span className="absolute -right-8 -top-10 h-32 w-32 rounded-full border border-white/20 transition-transform duration-500 group-hover:scale-105" />
+      <span className="absolute bottom-6 left-6 h-9 w-9 rotate-12 border-2 border-white/25" />
+      <span className="absolute right-10 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-white/35" />
+      <span className="absolute left-[36%] top-6 text-[0.6rem] font-medium uppercase tracking-[0.22em] text-white/45">
         {label}
       </span>
     </div>
@@ -81,13 +81,14 @@ function LeadProject({
   labels: CardLabels;
 }) {
   const primaryHref = project.liveUrl ?? project.githubUrl;
+  const highlights = project.highlights?.slice(0, 3);
 
   return (
     <article
-      className="project-card project-item group flex min-h-[16rem] flex-col overflow-hidden text-white sm:min-h-[18rem] lg:min-h-[20rem] lg:flex-row"
+      className="project-card project-item group flex min-h-[12rem] flex-col overflow-hidden text-white sm:min-h-[13.5rem] lg:min-h-[14.5rem] lg:flex-row"
       style={{ backgroundColor: project.accentColor }}
     >
-      <div className="relative z-10 flex flex-1 flex-col justify-between gap-6 p-6 sm:p-8 lg:p-10">
+      <div className="relative z-10 flex flex-1 flex-col justify-between gap-4 p-5 sm:p-6 lg:p-7">
         <div className="flex flex-wrap items-center gap-2">
           <CategoryChip>{labels.category}</CategoryChip>
           <span className="text-[0.7rem] uppercase tracking-[0.16em] text-white/85">
@@ -95,8 +96,8 @@ function LeadProject({
           </span>
         </div>
 
-        <div className="space-y-3 sm:space-y-4">
-          <h3 className="max-w-2xl text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
+        <div className="space-y-2 sm:space-y-2.5">
+          <h3 className="max-w-2xl text-2xl font-extrabold leading-[1.08] tracking-tight sm:text-3xl lg:text-[2.15rem]">
             {primaryHref ? (
               <a
                 href={primaryHref}
@@ -110,15 +111,15 @@ function LeadProject({
               project.title
             )}
           </h3>
-          <p className="max-w-xl text-sm leading-relaxed text-white/92 sm:text-base">
+          <p className="max-w-xl text-sm leading-snug text-white/92">
             {project.summary}
           </p>
-          {project.highlights && project.highlights.length > 0 ? (
-            <ul className="hidden flex-wrap gap-x-5 gap-y-2 pt-1 sm:flex">
-              {project.highlights.map((item) => (
+          {highlights && highlights.length > 0 ? (
+            <ul className="hidden flex-wrap gap-x-4 gap-y-1.5 pt-0.5 sm:flex">
+              {highlights.map((item) => (
                 <li
                   key={item}
-                  className="flex items-center gap-2 text-[0.8rem] text-white/88"
+                  className="flex items-center gap-2 text-[0.75rem] text-white/88"
                 >
                   <span
                     aria-hidden
@@ -131,12 +132,12 @@ function LeadProject({
           ) : null}
         </div>
 
-        <div className="space-y-4">
-          <ul className="hidden flex-wrap gap-2 sm:flex">
+        <div className="space-y-3">
+          <ul className="hidden flex-wrap gap-1.5 sm:flex">
             {project.technologies.map((tech) => (
               <li
                 key={tech}
-                className="border border-white/35 px-2 py-0.5 text-[0.68rem] uppercase tracking-[0.08em] text-white/90"
+                className="border border-white/35 px-2 py-0.5 text-[0.65rem] uppercase tracking-[0.08em] text-white/90"
               >
                 {tech}
               </li>
@@ -159,10 +160,11 @@ function SelectedCard({
   labels: CardLabels;
 }) {
   const primaryHref = project.liveUrl ?? project.githubUrl;
+  const highlights = project.highlights?.slice(0, 2);
 
   return (
     <article
-      className="project-card project-item flex h-full min-h-[18rem] flex-col justify-between p-6 text-white sm:min-h-[22rem] sm:p-8"
+      className="project-card project-item flex h-full min-h-[13.5rem] flex-col justify-between p-5 text-white sm:min-h-[15rem] sm:p-6"
       style={{ backgroundColor: project.accentColor }}
     >
       <div className="flex flex-wrap items-center gap-2">
@@ -172,8 +174,8 @@ function SelectedCard({
         </span>
       </div>
 
-      <div className="mt-8 space-y-3 sm:space-y-4">
-        <h3 className="text-2xl font-extrabold leading-tight tracking-tight sm:text-3xl">
+      <div className="mt-4 space-y-2 sm:mt-5">
+        <h3 className="text-xl font-extrabold leading-tight tracking-tight sm:text-2xl">
           {primaryHref ? (
             <a
               href={primaryHref}
@@ -187,19 +189,19 @@ function SelectedCard({
             project.title
           )}
         </h3>
-        <p className="max-w-md text-sm leading-relaxed text-white/92 sm:text-[0.95rem]">
+        <p className="line-clamp-2 max-w-md text-sm leading-snug text-white/92">
           {project.summary}
         </p>
-        {project.highlights && project.highlights.length > 0 ? (
-          <ul className="hidden space-y-1.5 pt-1 sm:block">
-            {project.highlights.map((item) => (
+        {highlights && highlights.length > 0 ? (
+          <ul className="hidden flex-wrap gap-x-3 gap-y-1 pt-0.5 sm:flex">
+            {highlights.map((item) => (
               <li
                 key={item}
-                className="flex items-start gap-2 text-[0.8rem] leading-snug text-white/88"
+                className="flex items-center gap-1.5 text-[0.75rem] leading-snug text-white/88"
               >
                 <span
                   aria-hidden
-                  className="mt-1.5 size-1 shrink-0 rounded-full bg-accent"
+                  className="size-1 shrink-0 rounded-full bg-accent"
                 />
                 <span>{item}</span>
               </li>
@@ -208,12 +210,12 @@ function SelectedCard({
         ) : null}
       </div>
 
-      <div className="mt-8 space-y-4">
-        <ul className="hidden flex-wrap gap-2 sm:flex">
+      <div className="mt-4 space-y-3 sm:mt-5">
+        <ul className="hidden flex-wrap gap-1.5 sm:flex">
           {project.technologies.map((tech) => (
             <li
               key={tech}
-              className="border border-white/35 px-2 py-0.5 text-[0.68rem] uppercase tracking-[0.08em] text-white/90"
+              className="border border-white/35 px-2 py-0.5 text-[0.65rem] uppercase tracking-[0.08em] text-white/90"
             >
               {tech}
             </li>
@@ -706,15 +708,15 @@ export function ProjectsSection({
 
           <div
             key={animKey}
-            className="projects-grid mt-8 space-y-12 sm:mt-12 sm:space-y-14"
+            className="projects-grid mt-6 space-y-10 sm:mt-10 sm:space-y-12"
           >
             {filter === "All" && lead ? (
               <Reveal>
                 <div>
-                  <div className="mb-4 sm:mb-5">
+                  <div className="mb-3 sm:mb-4">
                     <SectionLabel>{copy.selectedWork}</SectionLabel>
                   </div>
-                  <div className="space-y-3 sm:space-y-4">
+                  <div className="space-y-2.5 sm:space-y-3">
                     <div
                       className="project-filter-cell"
                       style={

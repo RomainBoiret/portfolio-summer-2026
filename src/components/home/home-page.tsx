@@ -78,34 +78,37 @@ export async function HomePage({ locale }: { locale: Locale }) {
         </Container>
       </section>
 
-      <section id="about" className="section-panel relative z-10">
+      <section
+        id="about"
+        className="section-panel relative z-10 sm:!min-h-0 sm:!justify-start sm:!py-10"
+      >
         <Container className="relative">
           <SectionHeading align="left">{dictionary.about.title}</SectionHeading>
 
-          <div className="mt-8 space-y-8 sm:mt-12 lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-16 lg:space-y-0">
-            <Reveal className="max-w-2xl space-y-4 sm:space-y-5">
-              <h3 className="text-xl font-extrabold tracking-tight sm:text-3xl">
+          <div className="mt-6 space-y-6 sm:mt-8 lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-10 lg:space-y-0">
+            <Reveal className="max-w-2xl space-y-3 sm:space-y-3.5">
+              <h3 className="text-lg font-extrabold tracking-tight sm:text-2xl">
                 {dictionary.about.headline}
               </h3>
-              <p className="text-base leading-relaxed text-muted sm:text-lg">
+              <p className="text-sm leading-snug text-muted sm:text-base">
                 {dictionary.about.paragraphs[0]}
               </p>
-              <p className="hidden text-lg leading-relaxed text-muted sm:block">
+              <p className="hidden text-sm leading-snug text-muted sm:block sm:text-base">
                 {dictionary.about.paragraphs[1]}
               </p>
-              <div className="pt-2">
+              <div className="pt-1">
                 <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-accent-text">
                   {dictionary.about.focusTitle}
                 </p>
-                <ul className="mt-3 space-y-2">
+                <ul className="mt-2 space-y-1.5">
                   {dictionary.about.focus.map((item) => (
                     <li
                       key={item}
-                      className="stagger-item flex items-start gap-2.5 text-sm text-muted sm:text-base"
+                      className="stagger-item flex items-start gap-2 text-sm text-muted"
                     >
                       <span
                         aria-hidden
-                        className="mt-2 size-1.5 shrink-0 rounded-full bg-accent"
+                        className="mt-1.5 size-1 shrink-0 rounded-full bg-accent"
                       />
                       <span>{item}</span>
                     </li>
@@ -116,20 +119,20 @@ export async function HomePage({ locale }: { locale: Locale }) {
 
             <Reveal
               delay={0.08}
-              className="h-fit space-y-6 border-t border-border pt-6 sm:space-y-8 sm:rounded-sm sm:border sm:border-border sm:bg-surface/70 sm:p-8 sm:pt-8"
+              className="h-fit space-y-4 border-t border-border pt-5 sm:space-y-5 sm:rounded-sm sm:border sm:border-border sm:bg-surface/70 sm:p-5 sm:pt-5"
             >
               {education.map((item) => (
                 <div key={item.id}>
                   <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-accent-text">
                     {dictionary.about.education}
                   </p>
-                  <p className="mt-2 text-base font-extrabold tracking-tight sm:text-lg">
+                  <p className="mt-1.5 text-sm font-extrabold tracking-tight sm:text-base">
                     {dictionary.about.degree}
                   </p>
-                  <p className="mt-1 text-sm text-muted sm:text-base">
+                  <p className="mt-0.5 text-sm text-muted">
                     {item.school}
                   </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
                     {item.startDate} - {dictionary.about.present}
                   </p>
                 </div>
@@ -139,15 +142,15 @@ export async function HomePage({ locale }: { locale: Locale }) {
                 <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-accent-text">
                   {dictionary.about.involvement}
                 </p>
-                <p className="mt-2 text-base font-extrabold tracking-tight sm:text-lg">
+                <p className="mt-1.5 text-sm font-extrabold tracking-tight sm:text-base">
                   <TextLink href={club.url} external>
                     {club.name}
                   </TextLink>
                 </p>
-                <p className="mt-1 text-sm text-muted sm:text-base">
+                <p className="mt-0.5 text-sm text-muted">
                   {dictionary.about.clubRole}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-1 text-sm leading-snug text-muted-foreground">
                   {dictionary.about.clubBlurb}
                 </p>
               </div>
@@ -156,11 +159,11 @@ export async function HomePage({ locale }: { locale: Locale }) {
                 <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-accent-text">
                   {dictionary.about.skills}
                 </p>
-                <ul className="mt-3 flex flex-wrap gap-2">
+                <ul className="mt-2 flex flex-wrap gap-1.5">
                   {skills.map((skill) => (
                     <li
                       key={skill}
-                      className="border border-border bg-background/60 px-2.5 py-1 text-sm text-muted sm:bg-transparent"
+                      className="border border-border bg-background/60 px-2 py-0.5 text-xs text-muted sm:bg-transparent sm:text-sm"
                     >
                       {skill}
                     </li>
