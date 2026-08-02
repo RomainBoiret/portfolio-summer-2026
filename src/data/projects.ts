@@ -35,11 +35,11 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
       "TypeScript",
       "Prisma",
       "PostgreSQL",
-      "Tailwind CSS",
+      "Auth.js",
     ],
     githubUrl:
       "https://github.com/RomainBoiret/FishFric-remastered",
-    liveUrl: "https://fish-fric-remastered-8ag2.vercel.app/",
+    liveUrl: "https://fish-fric-remastered-psi.vercel.app/",
     featured: true,
     accentColor: "#0a4d68",
   },

@@ -281,7 +281,7 @@ export const en: Dictionary = {
       pokepark:
         "A Java exploration game in a virtual park, with Pokémon-style interactions and save data in JSON.",
       "fishfric-bank-remastered":
-        "An ocean-themed banking remaster with accounts, ledger transfers, P2P, and a recruiter demo - Next.js, Prisma, and Postgres end to end.",
+        "An ocean-themed banking remaster with a cent-based ledger, P2P, bill pay, and HMAC-signed cheque deposits - Next.js, Prisma, and Postgres end to end.",
       "romainboiret-com":
         "This site: a bilingual portfolio I keep refining for clarity, speed, and an honest record of what I’m working on.",
       fidelio:
@@ -314,10 +314,10 @@ export const en: Dictionary = {
         "Built for everyday use in store",
       ],
       "fishfric-bank-remastered": [
-        "Next.js App Router + Prisma ledger",
-        "Internal transfers and P2P with Q&A",
-        "Auth, Neon Postgres, Vercel deploy",
-        "Public recruiter demo mode",
+        "Append-only cent ledger (Prisma / Neon)",
+        "Transfers, P2P with Q&A, and bill pay",
+        "HMAC-signed one-shot cheque deposits",
+        "Recruiter demo with Auth.js and reef reset",
       ],
     },
   },

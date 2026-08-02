@@ -20,6 +20,7 @@ export const skills = [
   "Nuxt.js",
   "React",
   "Next.js",
+  "Vite.js",
   "Node.js",
   "PostgreSQL",
   "Prisma",
