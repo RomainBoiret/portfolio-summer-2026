@@ -23,7 +23,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     githubUrl: "https://github.com/RomainBoiret/Pomikit-ui",
     liveUrl: "https://romainboiret.github.io/Pomikit-ui/",
     featured: true,
-    accentColor: "#15233f",
+    accentColor: "#5b5bd6",
   },
   {
     slug: "fishfric-bank-remastered",
@@ -41,7 +41,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
       "https://github.com/RomainBoiret/FishFric-remastered",
     liveUrl: "https://fish-fric-remastered-psi.vercel.app/",
     featured: true,
-    accentColor: "#0a4d68",
+    accentColor: "#087f8c",
   },
   {
     slug: "fidelio",
@@ -57,7 +57,40 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
       "https://github.com/RomainBoiret/Fidelio",
     liveUrl: "https://fidelio-sand.vercel.app/",
     featured: true,
-    accentColor: "#6e2f4a",
+    accentColor: "#a34067",
+  },
+  {
+    slug: "northwood-player",
+    title: "Northwood Player",
+    year: "2026",
+    category: "Apps",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Electron",
+      "Spotify API",
+      "Canvas",
+    ],
+    githubUrl:
+      "https://github.com/RomainBoiret/Northwood-Player",
+    liveUrl:
+      "https://github.com/RomainBoiret/Northwood-Player/releases",
+    accentColor: "#4f6b45",
+  },
+  {
+    slug: "pokepark",
+    title: "PokePark",
+    year: "2024",
+    category: "Games",
+    technologies: [
+      "Java",
+      "Swing",
+      "JSON",
+      "i18n",
+    ],
+    githubUrl: "https://github.com/RomainBoiret/PokePark",
+    liveUrl: "https://github.com/RomainBoiret/PokePark/releases",
+    accentColor: "#c94747",
   },
   {
     slug: "romainboiret-com",
@@ -73,21 +106,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     githubUrl:
       "https://github.com/RomainBoiret/portfolio-summer-2026",
     liveUrl: "https://romainboiret.com",
-    accentColor: "#c45c26",
-  },
-  {
-    slug: "pokepark",
-    title: "PokePark",
-    year: "2024",
-    category: "Games",
-    technologies: [
-      "Java",
-      "Swing",
-      "JSON",
-      "i18n",
-    ],
-    githubUrl: "https://github.com/RomainBoiret/PokePark",
-    accentColor: "#22593a",
+    accentColor: "#c65d2e",
   },
   {
     slug: "starwars-galaxy",
@@ -102,7 +121,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     ],
     githubUrl:
       "https://github.com/RomainBoiret/starwars-galaxy",
-    accentColor: "#c9a227",
+    accentColor: "#b89622",
   },
   {
     slug: "solar-system",
@@ -117,7 +136,7 @@ export const projects: Omit<Project, "summary" | "highlights">[] = [
     githubUrl:
       "https://github.com/RomainBoiret/Solar_System.html",
     liveUrl: "https://romainboiret.github.io/Solar_System.html/",
-    accentColor: "#e07020",
+    accentColor: "#d97706",
   },
   {
     slug: "teddy-bot",

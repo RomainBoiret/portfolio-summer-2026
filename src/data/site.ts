@@ -18,7 +18,7 @@ export const siteConfig = {
     },
     {
       labelKey: "linkedin",
-      href: "https://www.linkedin.com/in/romain-boiret",
+      href: "https://www.linkedin.com/in/romain-boiret-54b0ab286/",
       icon: "linkedin",
     },
     {
